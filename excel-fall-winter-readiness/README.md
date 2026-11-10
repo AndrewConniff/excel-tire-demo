@@ -42,6 +42,16 @@ This regenerates:
 - `sample-data/answer-key-metrics.json`
 - `README.md`, `demo-script.md`, `prompt-card.md`, `presenter-setup.md`, `index.html`
 
+## Where to run prompts (Excel vs Chat)
+
+| Demo step | Run in Excel (preferred) | Open this first | Copilot Chat alternative |
+|---|---|---|---|
+| 1. Summarize trends | Yes | `Fall_Winter_Readiness_2026.xlsx` → `Sales` sheet (`tblSales`) | Attach workbook in Chat and ask same prompt |
+| 2. Highlight stock risk | Yes | `Inventory` sheet (`tblInventory`) | Attach workbook or `Inventory.csv` in Chat |
+| 3. Retrieve service insights | Yes | `AutoService` sheet (`tblService`) | Attach workbook or `AutoService.csv` in Chat |
+| 4. Explain target variance | Yes | `Sales` + `Targets` sheets | Attach workbook, ask for summarized variance table |
+| 5. Corporate wrap | Yes | `Feedback` sheet, then workbook context | Attach workbook or `Feedback.csv` in Chat |
+
 ## Folder tree
 
 ```text

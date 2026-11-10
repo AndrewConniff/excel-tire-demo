@@ -27,6 +27,8 @@ Talk track:
 ### 1) Summarize trends (skill: summarize trends)
 
 **Click path:** Open `Sales` sheet → click any cell in `tblSales` → Copilot pane.  
+**File/context in use:** `sample-data/Fall_Winter_Readiness_2026.xlsx` (`Sales` table view).  
+**Alternative:** In Copilot Chat, attach the workbook and run the same prompt.
 **Prompt:**
 ```text
 Using tblSales, summarize the top 5 trends over the last 13 weeks.
@@ -43,6 +45,8 @@ Create a line chart of weekly Net Sales (CAD) by Department using Week Ending on
 ### 2) Highlight key data points (skill: highlight key data points)
 
 **Click path:** `Inventory` sheet → select `tblInventory`.  
+**File/context in use:** same workbook, `Inventory` sheet only.  
+**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/Inventory.csv`.
 **Prompt:**
 ```text
 In tblInventory, highlight rows where Category is Winter Tires and Weeks of Supply is below 1.5.
@@ -59,6 +63,8 @@ Which stores in that highlighted set are not restocked before 2026-11-20?
 ### 3) Retrieve insights (skill: retrieve insights)
 
 **Click path:** `AutoService` sheet → select `tblService`.  
+**File/context in use:** same workbook, `AutoService` sheet only.  
+**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/AutoService.csv`.
 **Prompt:**
 ```text
 From tblService, show Bay Utilization % by Region by Week Ending.
@@ -75,6 +81,8 @@ Which region is over capacity, and when did that start?
 ### 4) Explain meaning (skill: explain meaning)
 
 **Click path:** `Sales` + `Targets` sheets.  
+**File/context in use:** same workbook with both `tblSales` and `tblTargets`.  
+**Alternative:** In Copilot Chat, attach workbook and ask for an aggregated summary table.
 **Prompt:**
 ```text
 Compare 13-week actual Net Sales (CAD) from tblSales to 13-Week Net Sales Target (CAD) in tblTargets by Region and Department.
@@ -91,6 +99,8 @@ Explain the variance formula in plain language and identify which areas are behi
 ### 5) Corporate-office wrap (skill: explain and summarize)
 
 **Click path:** `Feedback` sheet, then workbook-level context in Copilot pane.  
+**File/context in use:** same workbook, `Feedback` table plus workbook context.  
+**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/Feedback.csv`.
 **Prompt:**
 ```text
 From tblFeedback, list the top 3 Auto Service feedback themes and include short example quotes.

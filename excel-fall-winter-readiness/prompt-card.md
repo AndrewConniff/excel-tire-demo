@@ -10,6 +10,11 @@
 3. Ask for explicit outputs (chart, table, highlights, bullets).
 4. Verify numbers before sharing.
 
+## Where to run these prompts
+
+- **Preferred:** Copilot in Excel with `Fall_Winter_Readiness_2026.xlsx` open.
+- **Alternative:** Copilot Chat with the workbook attached (or relevant CSV attached when needed).
+
 ## 8 copy/paste prompts
 
 1. ```text
