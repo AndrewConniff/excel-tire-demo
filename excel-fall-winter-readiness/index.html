@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyze with Copilot in Excel - Demo Guide</title>
+  <style>
+    :root {
+      --excel-green: #217346;
+      --copy-complement: #7a3ea1;
+      --ink: #1f2937;
+      --panel: #f3f7f4;
+    }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--ink); }
+    header { background: var(--excel-green); color: #fff; padding: 24px; }
+    header h1 { margin: 0 0 6px; }
+    main { max-width: 1100px; margin: 0 auto; padding: 22px; }
+    .meta { background: var(--panel); border-left: 6px solid var(--excel-green); padding: 12px 14px; margin-bottom: 16px; }
+    .links a { display: inline-block; margin: 6px 10px 6px 0; color: #0b57d0; text-decoration: none; font-weight: 600; }
+    .box { border: 1px solid #dbe5df; border-radius: 8px; margin: 12px 0; overflow: hidden; }
+    .boxhead { background: #edf5f0; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; }
+    pre { margin: 0; padding: 12px; white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 0.9rem; }
+    button { border: none; background: var(--copy-complement); color: #fff; padding: 7px 10px; border-radius: 6px; cursor: pointer; }
+    h2 { margin-top: 28px; }
+    .small { color: #4b5563; font-size: 0.92rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Analyze with Microsoft 365 Copilot in Excel</h1>
+    <div>60-minute VILT demo guide | Company context: Canadian Tire | en-CA, CAD, metric</div>
+  </header>
+  <main>
+    <div class="meta">
+      <strong>Instructor instructions:</strong> Open workbook from OneDrive with AutoSave on, keep Copilot pane visible, and verify outputs against table numbers before narrating conclusions.
+      <br><br>
+      Storyline: It's Monday 2026-11-09. Regional operations is reviewing 13 weeks ending 2026-11-07 before winter tire and holiday peak.
+    </div>
+
+    <div class="links">
+      <a href="./README.md">README.md</a>
+      <a href="./demo-script.md">demo-script.md</a>
+      <a href="./answer-key.md">answer-key.md</a>
+      <a href="./prompt-card.md">prompt-card.md</a>
+      <a href="./presenter-setup.md">presenter-setup.md</a>
+      <a href="./sample-data/Fall_Winter_Readiness_2026.xlsx">Workbook (.xlsx)</a>
+    </div>
+
+    <h2>Step-by-step run order</h2>
+    <ol>
+      <li>Open workbook from OneDrive and confirm AutoSave is on.</li>
+      <li>Start on <strong>Sales</strong> table for trend summary and chart.</li>
+      <li>Move to <strong>Inventory</strong> for stock-risk highlights and delivery cutoff check.</li>
+      <li>Move to <strong>AutoService</strong> for capacity and wait-time insight by region/week.</li>
+      <li>Use <strong>Sales + Targets</strong> for actual-vs-target variance explanation.</li>
+      <li>Close with <strong>Feedback + workbook wrap</strong> for call-ready summary bullets.</li>
+    </ol>
+
+    <h2>Copy-ready prompts</h2>
+    <div class="box"><div class="boxhead"><strong>Demo 1: Summarize trends</strong><button onclick="copyPrompt('p1')">Copy</button></div><pre id="p1">Using tblSales, summarize the top 5 trends over the last 13 weeks.
+Focus on category and department movement by week and by region.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 1 follow-up</strong><button onclick="copyPrompt('p1b')">Copy</button></div><pre id="p1b">Create a line chart of weekly Net Sales (CAD) by Department using Week Ending on the x-axis.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 2: Highlight key data points</strong><button onclick="copyPrompt('p2')">Copy</button></div><pre id="p2">In tblInventory, highlight rows where Category is Winter Tires and Weeks of Supply is below 1.5.
+Then sort these rows by Next Delivery Date ascending.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 2 follow-up</strong><button onclick="copyPrompt('p2b')">Copy</button></div><pre id="p2b">Which stores in that highlighted set are not restocked before 2026-11-20?</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 3: Retrieve insights</strong><button onclick="copyPrompt('p3')">Copy</button></div><pre id="p3">From tblService, show Bay Utilization % by Region by Week Ending.
+Create either a PivotTable or chart that makes region changes easy to compare.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 3 follow-up</strong><button onclick="copyPrompt('p3b')">Copy</button></div><pre id="p3b">Which region is over capacity, and when did that start?</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 4: Explain meaning</strong><button onclick="copyPrompt('p4')">Copy</button></div><pre id="p4">Compare 13-week actual Net Sales (CAD) from tblSales to 13-Week Net Sales Target (CAD) in tblTargets by Region and Department.
+Create a summary with Actual, Target, and Variance %.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 4 follow-up</strong><button onclick="copyPrompt('p4b')">Copy</button></div><pre id="p4b">Explain the variance formula in plain language and identify which areas are behind target and by how much.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 5: Corporate wrap</strong><button onclick="copyPrompt('p5')">Copy</button></div><pre id="p5">From tblFeedback, list the top 3 Auto Service feedback themes and include short example quotes.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Demo 5 follow-up</strong><button onclick="copyPrompt('p5b')">Copy</button></div><pre id="p5b">Write 5 bullets summarizing this workbook for a regional operations call.</pre></div>
+
+    <h2>Backup prompts</h2>
+    <div class="box"><div class="boxhead"><strong>Backup A</strong><button onclick="copyPrompt('b1')">Copy</button></div><pre id="b1">Find unusual Gross Margin % in flyer weeks and identify category/week/store outliers.</pre></div>
+    <div class="box"><div class="boxhead"><strong>Backup B</strong><button onclick="copyPrompt('b2')">Copy</button></div><pre id="b2">Using this workbook, draft an email to Quebec store managers about winter tire stock risk and next actions.</pre></div>
+
+    <p class="small">Tip: If Copilot output differs, use the fallback approach in <code>demo-script.md</code> and validate with <code>answer-key.md</code>.</p>
+  </main>
+  <script>
+    async function copyPrompt(id) {
+      await navigator.clipboard.writeText(document.getElementById(id).innerText);
+      alert("Copied.");
+    }
+  </script>
+</body>
+</html>

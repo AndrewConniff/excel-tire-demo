@@ -1,0 +1,185 @@
+{
+  "company_name": "Canadian Tire",
+  "pattern_a": {
+    "top_category_last_4_weeks": "Winter Tires",
+    "winter_tires_ramp_ratio_by_region": {
+      "Atlantic": 6.6,
+      "BC": 5.83,
+      "Ontario": 6.33,
+      "Prairies": 6.5,
+      "Quebec": 7.31
+    }
+  },
+  "pattern_b": {
+    "at_risk_winter_tire_rows": [
+      {
+        "Store ID": 205,
+        "Region": "Quebec",
+        "Product": "Winter Tires - Core",
+        "Weeks of Supply": 0.72,
+        "Next Delivery Date": "2026-11-24"
+      },
+      {
+        "Store ID": 212,
+        "Region": "Quebec",
+        "Product": "Winter Tires - Core",
+        "Weeks of Supply": 0.65,
+        "Next Delivery Date": "2026-11-27"
+      },
+      {
+        "Store ID": 318,
+        "Region": "Ontario",
+        "Product": "Winter Tires - Core",
+        "Weeks of Supply": 0.8,
+        "Next Delivery Date": "2026-11-22"
+      },
+      {
+        "Store ID": 417,
+        "Region": "Prairies",
+        "Product": "Winter Tires - Core",
+        "Weeks of Supply": 0.45,
+        "Next Delivery Date": "2026-11-22"
+      }
+    ],
+    "ontario_all_season_overstock_rows": [
+      {
+        "Store ID": 305,
+        "Product": "All-Season Tires - Core",
+        "Weeks of Supply": 13.25
+      },
+      {
+        "Store ID": 327,
+        "Product": "All-Season Tires - Core",
+        "Weeks of Supply": 12.91
+      }
+    ]
+  },
+  "pattern_c": {
+    "prairies_first_week_over_95": "2026-10-24",
+    "prairies_weekly_utilization": [
+      {
+        "Week Ending": "2026-08-15",
+        "Bay Utilization %": 0.8439
+      },
+      {
+        "Week Ending": "2026-08-22",
+        "Bay Utilization %": 0.833
+      },
+      {
+        "Week Ending": "2026-08-29",
+        "Bay Utilization %": 0.8179
+      },
+      {
+        "Week Ending": "2026-09-05",
+        "Bay Utilization %": 0.8939
+      },
+      {
+        "Week Ending": "2026-09-12",
+        "Bay Utilization %": 0.7847
+      },
+      {
+        "Week Ending": "2026-09-19",
+        "Bay Utilization %": 0.8244
+      },
+      {
+        "Week Ending": "2026-09-26",
+        "Bay Utilization %": 0.8567
+      },
+      {
+        "Week Ending": "2026-10-03",
+        "Bay Utilization %": 0.8469
+      },
+      {
+        "Week Ending": "2026-10-10",
+        "Bay Utilization %": 0.832
+      },
+      {
+        "Week Ending": "2026-10-17",
+        "Bay Utilization %": 0.8768
+      },
+      {
+        "Week Ending": "2026-10-24",
+        "Bay Utilization %": 0.986
+      },
+      {
+        "Week Ending": "2026-10-31",
+        "Bay Utilization %": 0.9953
+      },
+      {
+        "Week Ending": "2026-11-07",
+        "Bay Utilization %": 1.003
+      }
+    ],
+    "over_capacity_rows": [
+      {
+        "Store ID": 406,
+        "Week Ending": "2026-10-24",
+        "Bay Utilization %": 1.0079
+      },
+      {
+        "Store ID": 406,
+        "Week Ending": "2026-10-31",
+        "Bay Utilization %": 1.0071
+      },
+      {
+        "Store ID": 412,
+        "Week Ending": "2026-10-31",
+        "Bay Utilization %": 1.0312
+      },
+      {
+        "Store ID": 401,
+        "Week Ending": "2026-11-07",
+        "Bay Utilization %": 1.0112
+      },
+      {
+        "Store ID": 412,
+        "Week Ending": "2026-11-07",
+        "Bay Utilization %": 1.0576
+      },
+      {
+        "Store ID": 422,
+        "Week Ending": "2026-11-07",
+        "Bay Utilization %": 1.0122
+      }
+    ],
+    "tire_changeover_share_oct_nov": 0.7119
+  },
+  "pattern_d": {
+    "seasonal_variance_pct": [
+      {
+        "Region": "BC",
+        "Variance %": -0.13
+      },
+      {
+        "Region": "Ontario",
+        "Variance %": -0.13
+      }
+    ],
+    "automotive_national_variance_pct": 0.0638,
+    "fixing_national_variance_pct": -0.001
+  },
+  "pattern_e": {
+    "flyer_units_lift_pct": 0.2661,
+    "flyer_margin_delta_points": -5.0,
+    "power_tools_negative_margin_rows": [
+      {
+        "Store ID": 314,
+        "Gross Margin %": -0.0514,
+        "Net Sales (CAD)": 5981.11,
+        "Gross Margin (CAD)": -307.15
+      },
+      {
+        "Store ID": 323,
+        "Gross Margin %": -0.0376,
+        "Net Sales (CAD)": 6174.89,
+        "Gross Margin (CAD)": -232.12
+      }
+    ]
+  },
+  "pattern_f": {
+    "wait_mentions": 60,
+    "booking_mentions": 51,
+    "tech_praise_mentions": 61,
+    "prairies_negative_auto_comments": 43
+  }
+}

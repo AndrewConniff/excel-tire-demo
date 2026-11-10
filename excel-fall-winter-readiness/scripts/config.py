@@ -1,0 +1,2 @@
+COMPANY_NAME = "Canadian Tire"
+RANDOM_SEED = 20261109

@@ -1,0 +1,25 @@
+Store ID,Store Name,City,Province,Region,Format,Auto Service Bays,Store Manager
+101,Store 101 – Halifax North,Halifax,NS,Atlantic,Large,10,Riley Singh
+104,Store 104 – Moncton West,Moncton,NB,Atlantic,Medium,6,Casey Bouchard
+109,Store 109 – St. John's East,St. John's,NL,Atlantic,Large,8,Morgan Mercer
+205,Store 205 – Montreal Saint-Laurent,Montreal,QC,Quebec,Medium,5,Quinn Singh
+208,Store 208 – Quebec City Beauport,Quebec City,QC,Quebec,Small,3,Rowan Nguyen
+212,Store 212 – Laval Chomedey,Laval,QC,Quebec,Large,10,Taylor Lemieux
+216,Store 216 – Sherbrooke Centre,Sherbrooke,QC,Quebec,Medium,6,Dakota Bains
+219,Store 219 – Gatineau Hull,Gatineau,QC,Quebec,Large,7,Quinn Khan
+301,Store 301 – Toronto East York,Toronto,ON,Ontario,Large,10,Morgan Fraser
+305,Store 305 – Mississauga Erin Mills,Mississauga,ON,Ontario,Small,5,Parker Morrison
+309,Store 309 – Ottawa South Keys,Ottawa,ON,Ontario,Medium,7,Avery Bouchard
+314,Store 314 – Hamilton Mountain,Hamilton,ON,Ontario,Medium,5,Avery Bains
+318,Store 318 – London North,London,ON,Ontario,Small,4,Riley Chow
+323,Store 323 – Kitchener South,Kitchener,ON,Ontario,Medium,5,Parker Bouchard
+327,Store 327 – Sudbury South,Sudbury,ON,Ontario,Medium,7,Quinn Nguyen
+332,Store 332 – Kingston East,Kingston,ON,Ontario,Small,4,Harper Mercer
+401,Store 401 – Winnipeg St. James,Winnipeg,MB,Prairies,Medium,5,Dakota Khan
+406,Store 406 – Regina South,Regina,SK,Prairies,Medium,6,Taylor Bains
+412,Store 412 – Red Deer South,Red Deer,AB,Prairies,Medium,6,Rowan Singh
+417,Store 417 – Calgary Seton,Calgary,AB,Prairies,Large,9,Casey Bouchard
+422,Store 422 – Saskatoon Stonebridge,Saskatoon,SK,Prairies,Large,10,Avery Singh
+501,Store 501 – Vancouver Cambie,Vancouver,BC,BC,Small,4,Cameron Fraser
+506,Store 506 – Kelowna North,Kelowna,BC,BC,Small,4,Dakota Lemieux
+511,Store 511 – Prince George West,Prince George,BC,BC,Large,10,Casey Fraser
