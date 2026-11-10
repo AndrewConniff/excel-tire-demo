@@ -1,127 +1,115 @@
-# Demo script — Analyze with Microsoft 365 Copilot in Excel (60 minutes)
+# Demo script — Copilot in Excel Follow-Along (60 minutes)
 
-**Classification: Public**  
-**Company context:** Canadian Tire (fictional demo data)  
-**Date context:** Monday 2026-11-09  
-**Storyline:** Fall-to-winter readiness review before winter tire rush and holiday season
+**Classification: Public**
 
-## 0–5 min: Welcome + storyline
+## 0–10 min: Setup
 
-Talk track:
-- "Today we are reviewing 13 weeks ending Saturdays, from 2026-08-15 to 2026-11-07."
-- "We’ll use Copilot in Excel to find trends, risks, and executive-ready updates."
-- "Everything in this file is invented for training."
+1. Open `sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx` in Excel from OneDrive/SharePoint.
+2. Confirm AutoSave is on.
+3. Open Copilot pane in Excel.
+4. Keep Copilot Chat available in a browser tab for the research section.
 
-## 5–15 min: Copilot in Excel essentials
+## 10–40 min: Excel follow-along prompts
 
-- Open workbook from **OneDrive/SharePoint** with **AutoSave on**.
-- Ensure data is in a proper **Excel table**.
-- Prompt anatomy for data tasks:
-  1. Goal
-  2. Table and columns
-  3. Output type (chart, highlight, column, summary)
-- Always verify Copilot output against visible numbers.
+### E1 — Trend summary
 
-## 15–50 min: Five demos (~7 min each)
+**Where this happens:** Excel, workbook `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx`, sheet `Data`, table `tblWinterHistory`.
 
-### 1) Summarize trends (skill: summarize trends)
-
-**Click path:** Open `Sales` sheet → click any cell in `tblSales` → Copilot pane.  
-**File/context in use:** `sample-data/Fall_Winter_Readiness_2026.xlsx` (`Sales` table view).  
-**Alternative:** In Copilot Chat, attach the workbook and run the same prompt.
-**Prompt:**
 ```text
-Using tblSales, summarize the top 5 trends over the last 13 weeks.
-Focus on category and department movement by week and by region.
+Summarize the top 5 trends in tblWinterHistory across seasons, regions, snowfall, and winter tire sales.
 ```
-**Follow-up prompt:**
+
+### E2 — Chart creation
+
+**Where this happens:** Same workbook/context as E1.
+
 ```text
-Create a line chart of weekly Net Sales (CAD) by Department using Week Ending on the x-axis.
+Create a chart comparing weekly Winter Tire Sales (CAD) and Snowfall (cm) by region.
+Use a layout that makes trend differences easy to explain in 60 seconds.
 ```
-**Expected result:** Copilot surfaces winter tire acceleration and department-level weekly movement; chart shows Automotive lift.  
-**What to say:** "We’re seeing the winter ramp emerge clearly, especially in Automotive."  
-**Fallback if different:** Filter to `Category = Winter Tires`, then re-ask trend summary by region.
 
-### 2) Highlight key data points (skill: highlight key data points)
+### E3 — Region risk insight
 
-**Click path:** `Inventory` sheet → select `tblInventory`.  
-**File/context in use:** same workbook, `Inventory` sheet only.  
-**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/Inventory.csv`.
-**Prompt:**
+**Where this happens:** Same workbook/context as E1.
+
 ```text
-In tblInventory, highlight rows where Category is Winter Tires and Weeks of Supply is below 1.5.
-Then sort these rows by Next Delivery Date ascending.
+Which regions appear highest risk for winter tire demand pressure this season, and why?
+Return 3 ranked regions with brief evidence.
 ```
-**Follow-up prompt:**
+
+### E4 — Executive summary bullets
+
+**Where this happens:** Same workbook/context as E1.
+
 ```text
-Which stores in that highlighted set are not restocked before 2026-11-20?
+Write 5 executive bullets summarizing the most important findings from this workbook.
 ```
-**Expected result:** Copilot flags winter tire low-WOS stores and identifies delayed replenishment risk.  
-**What to say:** "This is the shortlist for immediate inventory action."  
-**Fallback:** Manually filter `Category = Winter Tires` and `Weeks of Supply < 1.5`, then ask Copilot to summarize visible rows.
 
-### 3) Retrieve insights (skill: retrieve insights)
+### E5 — Action table
 
-**Click path:** `AutoService` sheet → select `tblService`.  
-**File/context in use:** same workbook, `AutoService` sheet only.  
-**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/AutoService.csv`.
-**Prompt:**
+**Where this happens:** Same workbook/context as E1.
+
 ```text
-From tblService, show Bay Utilization % by Region by Week Ending.
-Create either a PivotTable or chart that makes region changes easy to compare.
+Create an action table with columns:
+Action | Owner Role | Target Date | Reason.
+Use the workbook findings to populate at least 5 rows.
 ```
-**Follow-up prompt:**
+
+## 40–55 min: Chat research → build workbook in Excel
+
+### R1 — Research prompt in Copilot Chat
+
+**Where this happens:** Copilot Chat (browser/app), no workbook required yet.
+
 ```text
-Which region is over capacity, and when did that start?
+Research public information themes on winter tire demand patterns in Canada.
+Give me:
+1) key demand drivers,
+2) weather-related factors,
+3) regional differences,
+4) likely signals to track this winter.
+Include concise source references where possible.
 ```
-**Expected result:** Prairies emerges as the capacity hotspot from late October, with wait-time pressure.  
-**What to say:** "Capacity pressure starts before peak season fully lands, so this is a staffing trigger."  
-**Fallback:** Build Pivot manually (Rows: Week Ending, Columns: Region, Values: Avg Bay Utilization %) then ask Copilot to interpret.
 
-### 4) Explain meaning (skill: explain meaning)
+### R2 — Ask Chat for starter dataset
 
-**Click path:** `Sales` + `Targets` sheets.  
-**File/context in use:** same workbook with both `tblSales` and `tblTargets`.  
-**Alternative:** In Copilot Chat, attach workbook and ask for an aggregated summary table.
-**Prompt:**
+**Where this happens:** Copilot Chat.
+
 ```text
-Compare 13-week actual Net Sales (CAD) from tblSales to 13-Week Net Sales Target (CAD) in tblTargets by Region and Department.
-Create a summary with Actual, Target, and Variance %.
+Create a starter dataset I can paste into Excel as CSV with these columns:
+Week Ending, Region, Avg Temp (C), Snowfall (cm), Winter Tire Units Sold, Winter Tire Sales (CAD), Notes.
+Generate 20 realistic fictional rows in YYYY-MM-DD and CAD conventions.
 ```
-**Follow-up prompt:**
+
+### R3 — Build workbook from Chat output
+
+**Where this happens:** Excel, new blank workbook.
+
 ```text
-Explain the variance formula in plain language and identify which areas are behind target and by how much.
+I pasted a CSV table on sheet ResearchData.
+Convert this into a clean Excel table and suggest a useful table name.
 ```
-**Expected result:** Seasonal shortfalls in BC/Ontario, Automotive ahead nationally, Fixing near target.  
-**What to say:** "Copilot can compute and explain performance gaps in plain language for mixed audiences."  
-**Fallback:** Ask Copilot to produce a new summary table first, then request explanation only.
 
-### 5) Corporate-office wrap (skill: explain and summarize)
+### R4 — Chart + summary from research table
 
-**Click path:** `Feedback` sheet, then workbook-level context in Copilot pane.  
-**File/context in use:** same workbook, `Feedback` table plus workbook context.  
-**Alternative:** In Copilot Chat, attach workbook or `sample-data/csv/Feedback.csv`.
-**Prompt:**
+**Where this happens:** Excel, new workbook with pasted table.
+
 ```text
-From tblFeedback, list the top 3 Auto Service feedback themes and include short example quotes.
+Create one chart and one 4-bullet summary from this table that I can share with leadership.
 ```
-**Follow-up prompt:**
+
+### R5 — Communication handoff
+
+**Where this happens:** Excel Copilot or Copilot Chat with table context.
+
 ```text
-Write 5 bullets summarizing this workbook for a regional operations call.
+Draft:
+1) a short Outlook update email, and
+2) a short Teams channel post
+based on this research table and chart.
 ```
-**Expected result:** Themes around wait times, booking confusion, and technician praise; concise call-ready wrap.  
-**What to say:** "This is the bridge from analysis to communication in Teams or Outlook."  
-**Fallback:** Filter Channel = Auto Service and re-ask for themes from visible data only.
 
-## 50–60 min: Recap, prompt card, Q&A
+## 55–60 min: Close
 
-- Recap four skills: summarize trends, highlight key data points, retrieve insights, explain meaning.
-- Share `prompt-card.md`.
-- Optional learner practice card if hands-on approval is granted.
-
-## Backup demos
-
-1. **Flyer margin check:**  
-   Prompt: "Find unusual Gross Margin % behavior in flyer weeks and identify outliers."
-2. **Copilot Chat handoff:**  
-   Prompt: "Using this workbook, draft an email to Quebec store managers about winter tire stock risk and next actions."
+1. Ask learners which prompt they would use first in their role.
+2. Remind learners to verify numbers before sharing outputs.

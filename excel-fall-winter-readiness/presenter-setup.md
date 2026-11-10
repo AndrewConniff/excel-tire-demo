@@ -1,15 +1,17 @@
 # Presenter setup
 
-**Classification: Public**  
-**Company context:** Canadian Tire
+**Classification: Public**
 
-1. Upload `sample-data/Fall_Winter_Readiness_2026.xlsx` to OneDrive.
-2. Create one clean workbook copy per session (for example):
-   - `Fall_Winter_Readiness_2026_Tue.xlsx`
-   - `Fall_Winter_Readiness_2026_Wed.xlsx`
-   - `Fall_Winter_Readiness_2026_Thu.xlsx`
-3. Keep AutoSave on during demo. Copilot may insert columns, formulas, highlights, and charts.
-4. Run all planned prompts once the day before delivery.
-5. Screenshot expected charts/tables and save as fallback visuals.
-6. Keep `answer-key.md` and `sample-data/answer-key-metrics.json` open for fast validation.
-7. If Copilot returns a different framing, use the fallback prompts in `demo-script.md`.
+1. Upload `sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx` to OneDrive/SharePoint.
+2. (Optional) Also upload `sample-data/Fall_Winter_Readiness_2026.xlsx` for legacy demos.
+3. Create one clean copy per session because Copilot may change the workbook:
+   - `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026_Tue.xlsx`
+   - `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026_Wed.xlsx`
+   - `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026_Thu.xlsx`
+4. Keep AutoSave on.
+5. Run every prompt in `index.html` once the day before.
+6. Capture fallback screenshots:
+   - one trend chart,
+   - one risk summary,
+   - one action table.
+7. Keep `index.html` open during delivery so you do not need to switch to `.md` or `.docx` files.

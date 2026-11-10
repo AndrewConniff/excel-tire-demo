@@ -1,50 +1,76 @@
-# Prompt card — Copilot in Excel (en-CA)
+# Prompt card — Copilot in Excel (Follow-Along)
 
-**Classification: Public**  
-**Company context:** Canadian Tire
+**Classification: Public**
 
 ## Quick tips
 
-1. Keep data in Excel tables.
-2. Open workbook from OneDrive/SharePoint with AutoSave on.
-3. Ask for explicit outputs (chart, table, highlights, bullets).
-4. Verify numbers before sharing.
+1. Keep workbook in OneDrive/SharePoint with AutoSave on.
+2. Ensure data is in an Excel table with headers.
+3. Use clear prompt anatomy: goal + table/sheet + output.
+4. Verify key numbers before sharing.
 
-## Where to run these prompts
+## Copy prompts
 
-- **Preferred:** Copilot in Excel with `Fall_Winter_Readiness_2026.xlsx` open.
-- **Alternative:** Copilot Chat with the workbook attached (or relevant CSV attached when needed).
+### 1) Excel trend summary
+**Where:** Excel → `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx` → table `tblWinterHistory`.
 
-## 8 copy/paste prompts
-
-1. ```text
-Summarize the top trends in tblSales over the last 13 weeks by category, department, and region.
-```
-2. ```text
-Create a line chart of weekly Net Sales (CAD) by Department from tblSales.
-```
-3. ```text
-In tblInventory, highlight Winter Tires rows where Weeks of Supply is below 1.5 and sort by Next Delivery Date.
-```
-4. ```text
-From the highlighted inventory rows, which stores are not restocked before 2026-11-20?
-```
-5. ```text
-Using tblService, show Bay Utilization % by Region by Week Ending and explain where capacity pressure starts.
-```
-6. ```text
-Compare actual Net Sales to tblTargets by Region and Department with a Variance % column.
-```
-7. ```text
-Explain the variance formula in plain language for non-technical operations leaders.
-```
-8. ```text
-From tblFeedback, summarize the top 3 Auto Service themes and write 5 bullets for a regional ops call.
+```text
+Summarize the top 5 trends in tblWinterHistory across seasons, regions, snowfall, and winter tire sales.
 ```
 
-## Optional learner practice card (if hands-on is approved)
+### 2) Excel chart prompt
+**Where:** Excel → same workbook/table.
 
-Practice task:
-1. Find one inventory risk and one service-capacity risk for a region.
-2. Build one chart and one short summary paragraph.
-3. Share one action recommendation with owner + date.
+```text
+Create a chart comparing weekly Winter Tire Sales (CAD) and Snowfall (cm) by region.
+```
+
+### 3) Excel risk ranking
+**Where:** Excel → same workbook/table.
+
+```text
+Which regions appear highest risk for winter tire demand pressure this season, and why?
+Return 3 ranked regions with brief evidence.
+```
+
+### 4) Excel executive bullets
+**Where:** Excel → same workbook/table.
+
+```text
+Write 5 executive bullets summarizing the most important findings from this workbook.
+```
+
+### 5) Copilot Chat research
+**Where:** Copilot Chat.
+
+```text
+Research public information themes on winter tire demand patterns in Canada.
+Give key demand drivers, weather factors, regional differences, and signals to track this winter.
+```
+
+### 6) Copilot Chat starter CSV
+**Where:** Copilot Chat.
+
+```text
+Create a starter dataset I can paste into Excel as CSV with columns:
+Week Ending, Region, Avg Temp (C), Snowfall (cm), Winter Tire Units Sold, Winter Tire Sales (CAD), Notes.
+Generate 20 realistic fictional rows in YYYY-MM-DD and CAD conventions.
+```
+
+### 7) Excel clean-table prompt
+**Where:** Excel → new workbook with pasted CSV.
+
+```text
+I pasted a CSV table on sheet ResearchData.
+Convert this into a clean Excel table and suggest a useful table name.
+```
+
+### 8) Communication handoff
+**Where:** Excel Copilot or Copilot Chat with research table context.
+
+```text
+Draft:
+1) a short Outlook update email, and
+2) a short Teams channel post
+based on this research table and chart.
+```

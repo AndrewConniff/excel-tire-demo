@@ -1,79 +1,49 @@
-# Analyze with Microsoft 365 Copilot in Excel — Fall/Winter Readiness
+# Copilot in Excel Follow-Along Lab
 
 **Classification: Public**
 
-This package provides a GitHub-ready, demo-led training set for a 60-minute VILT session:
-**"Analyze with Microsoft 365 Copilot in Excel"**.
+This package is now a **follow-along** lab for commercial Microsoft 365 Copilot users.  
+Participants can run prompts in their own Excel/Chat context without preloaded tenant conversations.
 
-- `COMPANY_NAME` source: `scripts/config.py`
-- Default `COMPANY_NAME`: **Canadian Tire**
-- Audience: new/light Copilot users from store operations and corporate office
-- Locale: en-CA, CAD, metric units, YYYY-MM-DD dates
+## Primary workbook for follow-along
 
-This demo uses a fictional Microsoft Fake Company created for demonstration purposes. Any resemblance to real organizations, people, products, services, or data is coincidental. Do not use customer confidential information in this package.
+- `sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx`
 
-## Purpose
+Use this workbook for:
+1. trend summaries
+2. chart generation
+3. weather-vs-sales comparisons
+4. email/Teams-ready insight bullets
 
-Model a **fall-to-winter readiness review** as of Monday 2026-11-09 across a national retailer with department/home, hardware, and automotive service businesses.
+## Secondary workbook (legacy scenario)
 
-## COMPANY_NAME switch
+- `sample-data/Fall_Winter_Readiness_2026.xlsx`
 
-All generated assets are built from `scripts/config.py`:
+Use only if you want the original table-driven scenario with `tblSales`, `tblInventory`, and `tblService`.
 
-```python
-COMPANY_NAME = "Canadian Tire"
-```
+## Chat-to-Excel research section (new)
 
-To change to a fictional public name (for example `Contoso Home & Auto`), update `COMPANY_NAME` and regenerate.
+The lab includes prompts for:
+1. researching tire-sales signals in Canada in Copilot Chat
+2. generating a starter tabular dataset from Chat output
+3. building a new workbook from that research in Excel
+4. turning results into charts and communication-ready summaries
 
-## Regenerate package
+## What to open
 
-From `excel-fall-winter-readiness/`:
+- `index.html` for the full runbook (all instructions in one place)
+- optional reference docs:
+  - `demo-script.md`
+  - `prompt-card.md`
+  - `presenter-setup.md`
+
+## Regeneration (existing generator assets)
+
+If you need to regenerate the original synthetic scenario files:
 
 ```powershell
 python scripts/generate_workbook.py
 python scripts/render_assets.py
 ```
 
-This regenerates:
-- `sample-data/Fall_Winter_Readiness_2026.xlsx`
-- `sample-data/csv/*.csv`
-- `answer-key.md`
-- `sample-data/answer-key-metrics.json`
-- `README.md`, `demo-script.md`, `prompt-card.md`, `presenter-setup.md`, `index.html`
-
-## Where to run prompts (Excel vs Chat)
-
-| Demo step | Run in Excel (preferred) | Open this first | Copilot Chat alternative |
-|---|---|---|---|
-| 1. Summarize trends | Yes | `Fall_Winter_Readiness_2026.xlsx` → `Sales` sheet (`tblSales`) | Attach workbook in Chat and ask same prompt |
-| 2. Highlight stock risk | Yes | `Inventory` sheet (`tblInventory`) | Attach workbook or `Inventory.csv` in Chat |
-| 3. Retrieve service insights | Yes | `AutoService` sheet (`tblService`) | Attach workbook or `AutoService.csv` in Chat |
-| 4. Explain target variance | Yes | `Sales` + `Targets` sheets | Attach workbook, ask for summarized variance table |
-| 5. Corporate wrap | Yes | `Feedback` sheet, then workbook context | Attach workbook or `Feedback.csv` in Chat |
-
-## Folder tree
-
-```text
-excel-fall-winter-readiness/
-  README.md
-  demo-script.md
-  answer-key.md
-  prompt-card.md
-  presenter-setup.md
-  index.html
-  scripts/
-    config.py
-    generate_workbook.py
-    render_assets.py
-  sample-data/
-    Fall_Winter_Readiness_2026.xlsx
-    answer-key-metrics.json
-    csv/
-      Stores.csv
-      Sales.csv
-      AutoService.csv
-      Inventory.csv
-      Targets.csv
-      Feedback.csv
-```
+This demo uses fictional/sample data and does not contain customer confidential information.

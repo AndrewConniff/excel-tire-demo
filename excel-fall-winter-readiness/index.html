@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Analyze with Copilot in Excel - Demo Guide</title>
+  <title>Analyze with Copilot in Excel - Follow-Along Runbook</title>
   <style>
     :root {
       --excel-green: #217346;
@@ -35,105 +35,109 @@
 <body>
   <header>
     <h1>Analyze with Microsoft 365 Copilot in Excel</h1>
-    <div>60-minute VILT demo guide | Company context: Canadian Tire | en-CA, CAD, metric</div>
+    <div>60-minute follow-along runbook | en-CA, CAD, metric</div>
   </header>
   <main>
     <div class="meta">
-      <strong>Instructor instructions:</strong> Open workbook from OneDrive with AutoSave on, keep Copilot pane visible, and verify outputs against table numbers before narrating conclusions.
+      <strong>Use this page as the single source during delivery.</strong>
       <br><br>
-      Storyline: It's Monday 2026-11-09. Regional operations is reviewing 13 weeks ending 2026-11-07 before winter tire and holiday peak.
+      Every prompt block below tells you exactly where to run it (Excel workbook/sheet/table or Copilot Chat).
     </div>
 
     <div class="links">
       <a href="./README.md">README.md</a>
       <a href="./demo-script.md">demo-script.md</a>
-      <a href="./answer-key.md">answer-key.md</a>
       <a href="./prompt-card.md">prompt-card.md</a>
       <a href="./presenter-setup.md">presenter-setup.md</a>
-      <a href="./sample-data/Fall_Winter_Readiness_2026.xlsx">Workbook (.xlsx)</a>
+      <a href="./sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx">Primary workbook (.xlsx)</a>
+      <a href="./sample-data/Fall_Winter_Readiness_2026.xlsx">Legacy workbook (.xlsx)</a>
     </div>
 
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab('runbook', this)">Runbook</button>
-      <button class="tab-btn" onclick="showTab('storyline', this)">Storyline</button>
+      <button class="tab-btn" onclick="showTab('research', this)">Chat research to Excel</button>
       <button class="tab-btn" onclick="showTab('prep', this)">Prep</button>
     </div>
 
     <section id="runbook" class="tab-panel active">
-    <h2>Step-by-step run order</h2>
-    <ol>
-      <li>Open workbook from OneDrive and confirm AutoSave is on.</li>
-      <li>Start on <strong>Sales</strong> table for trend summary and chart.</li>
-      <li>Move to <strong>Inventory</strong> for stock-risk highlights and delivery cutoff check.</li>
-      <li>Move to <strong>AutoService</strong> for capacity and wait-time insight by region/week.</li>
-      <li>Use <strong>Sales + Targets</strong> for actual-vs-target variance explanation.</li>
-      <li>Close with <strong>Feedback + workbook wrap</strong> for call-ready summary bullets.</li>
-    </ol>
+      <h2>Main follow-along flow (Excel first)</h2>
+      <div class="prep">
+        1. Open <code>Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx</code> in Excel (OneDrive/SharePoint, AutoSave on).<br>
+        2. Keep Copilot pane open in Excel.<br>
+        3. Run prompts E1-E5 in order.
+      </div>
 
-    <h2>Where to run each prompt</h2>
-    <div class="prep">
-      <ol>
-        <li><strong>Demo 1:</strong> Excel workbook open on <code>Sales</code> sheet (<code>tblSales</code>). Chat alternative: attach workbook in Copilot Chat.</li>
-        <li><strong>Demo 2:</strong> Excel workbook open on <code>Inventory</code> sheet (<code>tblInventory</code>). Chat alternative: attach workbook or <code>Inventory.csv</code>.</li>
-        <li><strong>Demo 3:</strong> Excel workbook open on <code>AutoService</code> sheet (<code>tblService</code>). Chat alternative: attach workbook or <code>AutoService.csv</code>.</li>
-        <li><strong>Demo 4:</strong> Excel workbook with <code>Sales</code> + <code>Targets</code> context. Chat alternative: attach workbook and request summary table.</li>
-        <li><strong>Demo 5:</strong> Excel workbook on <code>Feedback</code> sheet plus workbook context. Chat alternative: attach workbook or <code>Feedback.csv</code>.</li>
-      </ol>
-    </div>
+      <div class="box"><div class="boxhead"><strong>E1 - Trend summary</strong><button onclick="copyPrompt('e1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel, workbook "Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx", sheet "Data", table "tblWinterHistory".</div><pre id="e1">Summarize the top 5 trends in tblWinterHistory across seasons, regions, snowfall, and winter tire sales.</pre></div>
 
-    <h2>Copy-ready prompts</h2>
-    <div class="box"><div class="boxhead"><strong>Demo 1: Summarize trends</strong><button onclick="copyPrompt('p1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook, Sales sheet (tblSales), Copilot pane in Excel.</div><pre id="p1">Using tblSales, summarize the top 5 trends over the last 13 weeks.
-Focus on category and department movement by week and by region.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 1 follow-up</strong><button onclick="copyPrompt('p1b')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same place as Demo 1 (Sales sheet in Excel).</div><pre id="p1b">Create a line chart of weekly Net Sales (CAD) by Department using Week Ending on the x-axis.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 2: Highlight key data points</strong><button onclick="copyPrompt('p2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook, Inventory sheet (tblInventory), Copilot pane in Excel.</div><pre id="p2">In tblInventory, highlight rows where Category is Winter Tires and Weeks of Supply is below 1.5.
-Then sort these rows by Next Delivery Date ascending.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 2 follow-up</strong><button onclick="copyPrompt('p2b')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same place as Demo 2 (Inventory sheet in Excel).</div><pre id="p2b">Which stores in that highlighted set are not restocked before 2026-11-20?</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 3: Retrieve insights</strong><button onclick="copyPrompt('p3')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook, AutoService sheet (tblService), Copilot pane in Excel.</div><pre id="p3">From tblService, show Bay Utilization % by Region by Week Ending.
-Create either a PivotTable or chart that makes region changes easy to compare.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 3 follow-up</strong><button onclick="copyPrompt('p3b')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same place as Demo 3 (AutoService sheet in Excel).</div><pre id="p3b">Which region is over capacity, and when did that start?</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 4: Explain meaning</strong><button onclick="copyPrompt('p4')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook with Sales and Targets sheets available in the same file.</div><pre id="p4">Compare 13-week actual Net Sales (CAD) from tblSales to 13-Week Net Sales Target (CAD) in tblTargets by Region and Department.
-Create a summary with Actual, Target, and Variance %.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 4 follow-up</strong><button onclick="copyPrompt('p4b')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same place as Demo 4 (Sales + Targets context in Excel).</div><pre id="p4b">Explain the variance formula in plain language and identify which areas are behind target and by how much.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 5: Corporate wrap</strong><button onclick="copyPrompt('p5')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook, Feedback sheet (tblFeedback), then workbook-level Copilot context.</div><pre id="p5">From tblFeedback, list the top 3 Auto Service feedback themes and include short example quotes.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Demo 5 follow-up</strong><button onclick="copyPrompt('p5b')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same place as Demo 5 (Feedback/workbook context in Excel).</div><pre id="p5b">Write 5 bullets summarizing this workbook for a regional operations call.</pre></div>
+      <div class="box"><div class="boxhead"><strong>E2 - Build comparison chart</strong><button onclick="copyPrompt('e2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same Excel workbook/table as E1.</div><pre id="e2">Create a chart comparing weekly Winter Tire Sales (CAD) and Snowfall (cm) by region.
+Use a layout that is easy to explain in 60 seconds.</pre></div>
 
-    <h2>Backup prompts</h2>
-    <div class="box"><div class="boxhead"><strong>Backup A</strong><button onclick="copyPrompt('b1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel workbook on Sales sheet with flyer columns visible.</div><pre id="b1">Find unusual Gross Margin % in flyer weeks and identify category/week/store outliers.</pre></div>
-    <div class="box"><div class="boxhead"><strong>Backup B</strong><button onclick="copyPrompt('b2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat with workbook attached (handoff to comms workflow).</div><pre id="b2">Using this workbook, draft an email to Quebec store managers about winter tire stock risk and next actions.</pre></div>
+      <div class="box"><div class="boxhead"><strong>E3 - Rank demand risk</strong><button onclick="copyPrompt('e3')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same Excel workbook/table as E1.</div><pre id="e3">Which regions appear highest risk for winter tire demand pressure this season, and why?
+Return 3 ranked regions with brief evidence.</pre></div>
 
-    <p class="small">Tip: If Copilot output differs, use the fallback approach in <code>demo-script.md</code> and validate with <code>answer-key.md</code>.</p>
+      <div class="box"><div class="boxhead"><strong>E4 - Executive bullets</strong><button onclick="copyPrompt('e4')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same Excel workbook/table as E1.</div><pre id="e4">Write 5 executive bullets summarizing the most important findings from this workbook.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>E5 - Action table</strong><button onclick="copyPrompt('e5')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same Excel workbook/table as E1.</div><pre id="e5">Create an action table with columns:
+Action | Owner Role | Target Date | Reason.
+Use workbook findings to populate at least 5 rows.</pre></div>
+
+      <h2>Excel fallback prompts</h2>
+      <div class="box"><div class="boxhead"><strong>Fallback A</strong><button onclick="copyPrompt('fb1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Same Excel workbook/table as E1.</div><pre id="fb1">Highlight any unusual week-over-week changes in Winter Tire Sales (CAD) by region and explain what may be driving them.</pre></div>
+      <div class="box"><div class="boxhead"><strong>Fallback B</strong><button onclick="copyPrompt('fb2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat with this workbook attached (alternative path).</div><pre id="fb2">Using this workbook, draft a short regional operations update for this week with top risks and next actions.</pre></div>
     </section>
 
-    <section id="storyline" class="tab-panel">
-        <h2>Storyline</h2>
-        <div class="prep">
-          It is Monday 2026-11-09. A regional operations analyst is reviewing the last 13 weeks (ending 2026-11-07) to prepare for winter tire rush and holiday demand, focusing on sales trends, stock risk, service capacity, target gaps, and customer feedback.
-        </div>
+    <section id="research" class="tab-panel">
+      <h2>Copilot Chat research -> build a new workbook in Excel</h2>
+      <div class="prep">
+        Use this section when you want to show research-first workflow, then move into Excel for structure and charts.
+      </div>
+
+      <div class="box"><div class="boxhead"><strong>R1 - Research themes</strong><button onclick="copyPrompt('r1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat (browser/app), no workbook required.</div><pre id="r1">Research public information themes on winter tire demand patterns in Canada.
+Give:
+1) key demand drivers,
+2) weather-related factors,
+3) regional differences,
+4) likely signals to track this winter.
+Include concise source references where possible.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>R2 - Generate starter CSV</strong><button onclick="copyPrompt('r2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat.</div><pre id="r2">Create a starter dataset I can paste into Excel as CSV with these columns:
+Week Ending, Region, Avg Temp (C), Snowfall (cm), Winter Tire Units Sold, Winter Tire Sales (CAD), Notes.
+Generate 20 realistic fictional rows in YYYY-MM-DD and CAD conventions.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>R3 - Clean table in Excel</strong><button onclick="copyPrompt('r3')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel, NEW blank workbook, sheet "ResearchData" after pasting CSV.</div><pre id="r3">I pasted a CSV table on sheet ResearchData.
+Convert this into a clean Excel table and suggest a useful table name.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>R4 - Build chart and summary</strong><button onclick="copyPrompt('r4')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel, same new workbook and table from R3.</div><pre id="r4">Create one chart and one 4-bullet summary from this table that I can share with leadership.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>R5 - Outlook + Teams handoff text</strong><button onclick="copyPrompt('r5')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Excel Copilot or Copilot Chat with your research table/chart context.</div><pre id="r5">Draft:
+1) a short Outlook update email, and
+2) a short Teams channel post
+based on this research table and chart.</pre></div>
     </section>
 
     <section id="prep" class="tab-panel">
-        <h2>Preparation checklist</h2>
-        <div class="prep">
-          <ol>
-            <li>Upload workbook to OneDrive/SharePoint and confirm AutoSave is on.</li>
-            <li>Create clean session copies (for example Tue/Wed/Thu) since Copilot edits the file.</li>
-            <li>Run every prompt once the day before and keep screenshots of expected outputs.</li>
-            <li>Keep <code>answer-key.md</code> and <code>sample-data/answer-key-metrics.json</code> open for quick validation.</li>
-            <li>If needed, regenerate all assets from <code>scripts/config.py</code> + <code>scripts/generate_workbook.py</code>.</li>
-          </ol>
-        </div>
+      <h2>Preparation checklist</h2>
+      <div class="prep">
+        <ol>
+          <li>Upload <code>sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx</code> to OneDrive/SharePoint.</li>
+          <li>Create clean session copies (_Tue, _Wed, _Thu) because Copilot edits the workbook.</li>
+          <li>Run prompts E1-E5 and R1-R5 once the day before.</li>
+          <li>Save screenshots of one trend chart, one risk output, and one action table.</li>
+          <li>Keep this HTML page open during delivery; no other instruction file is required.</li>
+        </ol>
+      </div>
     </section>
   </main>
   <script>
     async function copyPrompt(id) {
-        await navigator.clipboard.writeText(document.getElementById(id).innerText);
-        alert("Copied.");
+      await navigator.clipboard.writeText(document.getElementById(id).innerText);
+      alert("Copied.");
     }
     function showTab(id, btn) {
-        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
-        btn.classList.add('active');
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
     }
   </script>
 </body>
