@@ -23,6 +23,7 @@
     button { border: none; background: var(--copy-complement); color: #fff; padding: 7px 10px; border-radius: 6px; cursor: pointer; }
     h2 { margin-top: 28px; }
     .small { color: #4b5563; font-size: 0.92rem; }
+    .prep { background: #eef6f0; border: 1px solid #d3e8d9; border-radius: 8px; padding: 12px 14px; margin: 14px 0 18px; }
   </style>
 </head>
 <body>
@@ -44,6 +45,17 @@
       <a href="./prompt-card.md">prompt-card.md</a>
       <a href="./presenter-setup.md">presenter-setup.md</a>
       <a href="./sample-data/Fall_Winter_Readiness_2026.xlsx">Workbook (.xlsx)</a>
+    </div>
+
+    <h2>Preparation checklist</h2>
+    <div class="prep">
+      <ol>
+        <li>Upload workbook to OneDrive/SharePoint and confirm AutoSave is on.</li>
+        <li>Create clean session copies (for example Tue/Wed/Thu) since Copilot edits the file.</li>
+        <li>Run every prompt once the day before and keep screenshots of expected outputs.</li>
+        <li>Keep <code>answer-key.md</code> and <code>sample-data/answer-key-metrics.json</code> open for quick validation.</li>
+        <li>If needed, regenerate all assets from <code>scripts/config.py</code> + <code>scripts/generate_workbook.py</code>.</li>
+      </ol>
     </div>
 
     <h2>Step-by-step run order</h2>
