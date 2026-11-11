@@ -15,6 +15,9 @@ Use this workbook for:
 3. weather-vs-sales comparisons
 4. email/Teams-ready insight bullets
 
+Related downloadable review file:
+- `sample-data/csv/Feedback.csv`
+
 ## Secondary workbook (legacy scenario)
 
 - `sample-data/Fall_Winter_Readiness_2026.xlsx`

@@ -13,6 +13,7 @@ This guide mirrors the Microsoft Learning MS-4021 Copilot in Excel flow and adap
 
 - Primary workbook for this scenario: `sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx`
 - Optional review input file: `sample-data/csv/Feedback.csv`
+- Feedback.csv download link: `./sample-data/csv/Feedback.csv`
 
 ## Demo steps (MS-4021 style, adapted)
 
