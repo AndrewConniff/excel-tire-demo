@@ -113,3 +113,47 @@ based on this research table and chart.
 
 1. Ask learners which prompt they would use first in their role.
 2. Remind learners to verify numbers before sharing outputs.
+
+## MS-4021 style demo sequence (tire-industry adaptation)
+
+Use this sequence when you want to mirror the Microsoft Learning "Copilot in Excel" format.
+
+Source demo page:
+https://microsoftlearning.github.io/MS-4021-Copilot-Immersion-Experience/Instructions/Exec/7-copilot-in-excel.html
+
+Source sample file download link:
+https://github.com/MicrosoftLearning/MS-4021-Copilot-Immersion-Experience/raw/master/ResourceFiles/EV_Charger_Sales_Analysis_v1.xlsx
+
+1. Open `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx` and navigate to `Data`.
+2. Prompt:
+
+```text
+Calculate monthly Winter Tire Sales (CAD) by Region and Season from this sheet.
+Add a helper column with a 4-week rolling sales average and explain the formula used.
+```
+
+3. Prompt:
+
+```text
+What is the total Winter Tire Sales (CAD) for each region so far this season?
+Create a bar chart and add it to a new sheet named "Regional Revenue".
+```
+
+4. Prompt:
+
+```text
+Highlight rows where Winter Tire Sales (CAD) is less than 120000.
+```
+
+5. Import `sample-data/csv/Feedback.csv` into a new sheet named `Reviews`.
+6. Prompt:
+
+```text
+Summarize the top 3 customer concerns we should focus on from the Reviews sheet.
+```
+
+7. Prompt:
+
+```text
+Highlight reviews that mention wait times, out-of-stock issues, or installation delays.
+```

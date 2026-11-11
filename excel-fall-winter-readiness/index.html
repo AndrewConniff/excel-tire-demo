@@ -46,6 +46,8 @@
 
     <div class="links">
       <a href="./README.md">README.md</a>
+      <a href="./DEMO-INSTRUCTIONS.md">DEMO-INSTRUCTIONS.md</a>
+      <a href="./DEMO-INSTRUCTIONS.docx">DEMO-INSTRUCTIONS.docx</a>
       <a href="./demo-script.md">demo-script.md</a>
       <a href="./prompt-card.md">prompt-card.md</a>
       <a href="./presenter-setup.md">presenter-setup.md</a>
@@ -56,6 +58,7 @@
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab('runbook', this)">Runbook</button>
       <button class="tab-btn" onclick="showTab('research', this)">Chat research to Excel</button>
+      <button class="tab-btn" onclick="showTab('ms4021', this)">EV_Finance_Demo</button>
       <button class="tab-btn" onclick="showTab('prep', this)">Prep</button>
     </div>
 
@@ -113,6 +116,40 @@ Convert this into a clean Excel table and suggest a useful table name.</pre></di
 1) a short Outlook update email, and
 2) a short Teams channel post
 based on this research table and chart.</pre></div>
+    </section>
+
+    <section id="ms4021" class="tab-panel">
+      <h2>MS-4021 style demo steps (auto parts and tire adaptation)</h2>
+      <div class="prep">
+        This tab mirrors the structure of the Microsoft Learning Copilot in Excel demo, adapted to this
+        tire and auto-service scenario.
+        <br><br>
+        Source page: <a href="https://microsoftlearning.github.io/MS-4021-Copilot-Immersion-Experience/Instructions/Exec/7-copilot-in-excel.html">Microsoft Copilot in Excel demo</a><br>
+        Source sample file download: <a href="https://github.com/MicrosoftLearning/MS-4021-Copilot-Immersion-Experience/raw/master/ResourceFiles/EV_Charger_Sales_Analysis_v1.xlsx">EV_Charger_Sales_Analysis_v1.xlsx</a><br>
+        This demo's workbook: <a href="./sample-data/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx">Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx</a>
+      </div>
+
+      <div class="box"><div class="boxhead"><strong>M1 - Open the workbook and go to Data</strong></div><div class="where">Step 1 equivalent. Open this demo workbook in Excel and select the "Data" tab.</div><pre>Use the workbook data to evaluate seasonal winter tire demand and service pressure by region.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M2 - Calculate monthly revenue patterns</strong><button onclick="copyPrompt('m2')">Copy</button></div><div class="where">Step 2 equivalent. Run in Excel Copilot on the Data sheet.</div><pre id="m2">Calculate monthly Winter Tire Sales (CAD) by Region and Season from this sheet.
+Add a helper column with a 4-week rolling sales average and explain the formula used.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M3 - Compare revenue by region</strong><button onclick="copyPrompt('m3')">Copy</button></div><div class="where">Step 3 equivalent. Run in Excel Copilot in the same workbook.</div><pre id="m3">What is the total Winter Tire Sales (CAD) for each region so far this season?
+Create a bar chart and add it to a new sheet named "Regional Revenue".</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M4 - Highlight low-sales rows</strong><button onclick="copyPrompt('m4')">Copy</button></div><div class="where">Step 4 equivalent. Run in Excel Copilot in the same workbook.</div><pre id="m4">Highlight rows where Winter Tire Sales (CAD) is less than 120000.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M5 - Prepare review data</strong></div><div class="where">Step 5 equivalent. Import review comments before the next prompts.</div><pre>Import sample-data/csv/Feedback.csv into a new sheet named "Reviews".</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M6 - Summarize top concerns</strong><button onclick="copyPrompt('m6')">Copy</button></div><div class="where">Step 6 equivalent. Run in Excel Copilot on the Reviews sheet.</div><pre id="m6">Summarize the top 3 customer concerns we should focus on from the Reviews sheet.</pre></div>
+
+      <div class="box"><div class="boxhead"><strong>M7 - Highlight service friction comments</strong><button onclick="copyPrompt('m7')">Copy</button></div><div class="where">Step 7 equivalent. Run in Excel Copilot on the Reviews sheet.</div><pre id="m7">Highlight reviews that mention wait times, out-of-stock issues, or installation delays.</pre></div>
+
+      <h2>Wrap-up</h2>
+      <div class="prep">
+        Use the resulting revenue view and customer-feedback themes to brief regional leaders on
+        inventory, staffing, and service readiness actions for the winter season.
+      </div>
     </section>
 
     <section id="prep" class="tab-panel">
